@@ -1,0 +1,36 @@
+
+body{
+     background-image: url(images/g.jpg);
+     text-align: center;
+     font-size: 16px;
+     .image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: ;
+}
+
+.image-container img {
+  width: 100%;
+  height: 50%;
+  margin-bottom: 10px;
+}
+
+* {
+box-sizing: border-box;
+}
+
+.column {
+    float: left;
+    width: 25%;
+    padding: 15px;
+}
+.row::after {
+    content:"";
+    font-size: 45px;
+    display:table;
+    clear: both;
+    }
+
+}
+
+

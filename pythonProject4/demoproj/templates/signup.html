@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+  <style>
+
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+    }
+
+    .signup-container {
+      max-width: 500px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    .signup-form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-top: 10px;
+      color: #333;
+    }
+
+    input {
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    button {
+      padding: 10px;
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+
+  <div class="signup-container">
+    <h1>Create An Account</h1>
+
+    <form method="post" action="{% url 'signup' %}" class="signup-form">
+      {% csrf_token %}
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" placeholder="Enter Your username" required>
+
+      <label for="fname">First Name</label>
+      <input type="text" id="fname" name="fname" placeholder="Enter Your First Name">
+
+      <label for="lname">Last Name</label>
+      <input type="text" id="lname" name="lname" placeholder="Enter Your Last Name">
+
+      <label for="email">Email:</label>
+      <input type="text" id="email" name="email" placeholder="Enter Your Email Id:">
+
+      <label for="password1">Password:</label>
+      <input type="password" id="password1" name="password1" placeholder="Enter Your Password:">
+
+      <label for="password2">Confirm Your Password:</label>
+      <input type="password" id="password2" name="password2" placeholder="Confirm Your Password:">
+
+      <button type="submit" class="signup-button">Signup</button>
+    </form>
+  </div>
+{% endblock %}

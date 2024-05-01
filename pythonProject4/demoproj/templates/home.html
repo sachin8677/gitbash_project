@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="row">
+   <div class="column">
+       <img src="{% static 'images/ele.png' %}"  width="100%;">
+       <h4><b>ELECTRONICS</b></h4>
+   </div>
+     <div class="column">
+
+       <img src="{% static 'images/cc.png' %}" width="100%;">
+
+
+   </div>
+   <div class="column">
+
+       <img src="{% static 'images/c.jpg' %}" width="100%;">
+
+
+   </div>
+    <div class="column">
+
+       <img src="{% static 'images/mobiles.png' %}" width="100%;">
+          <h4><b>MOBILES</b></h4>
+
+   </div>
+
+</div>
+
+<h2><b># THE SALE IS UPTO END DONT MISS IT #</b><br><b>GRAB IT NOW!!!</b></h2>
+<div class="row">
+{% for prod in product %}
+    <div class="col-12 col-sm-6 col-md-4 mb-4">
+<div class="card text-center" style="width: 18rem;">
+  <img src="{{prod.image.url}}" class="card-img-top" style="width:270px;height:160px; alt="...">
+  <div class="card-body">
+    <h5 class="card-title"style="color:black;">{{prod.name}}</h5>
+      <p class="card-text"style="color:black;">{{prod.price}}</p>
+      <p class="card-text"style="color:black;">{{prod.desc}}</p>
+    <a href="#" class="btn btn-primary">ADD to CART</a>
+  </div>
+</div>
+    </div>
+
+
+{% endfor %}
+    </div>
+{% endblock %}
